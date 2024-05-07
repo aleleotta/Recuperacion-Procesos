@@ -13,6 +13,7 @@ if __name__ == "__main__":
     for i in range(0,19,2):
         p = Process(target = sumaArgumentos, args = (numbers[i],numbers[i+1]))
         p.start()
-        if i == 18:
-            p.join()
+        """if i == 18:
+            p.join()"""
+    p.join()
     print("All processes have been terminated.")
