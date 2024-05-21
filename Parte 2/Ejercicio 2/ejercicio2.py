@@ -5,13 +5,17 @@ from random import randint
 def crearRutas(sender: PipeConnection):
     listadoRutas = []
     for i in range(0, 11):
-        ip: str = f"{randint(0,255)}.{randint(0,255)}.{randint(0,255)}.{randint(0,255)}"
-        listadoRutas.append(ip)
+        primerOcteto = randint(0,255)
+        ip: str = f"{primerOcteto}.{randint(0,255)}.{randint(0,255)}.{randint(0,255)}"
+        tuple = (primerOcteto, ip)
+        listadoRutas.append(tuple)
     sender.send(listadoRutas)
 
 def clasificarRutas(receiver: PipeConnection, sender: PipeConnection):
     listadoRutas = receiver.recv()
     listadoRutasABC = []
+    for tuple in listadoRutas:
+        tuple[]
     
 
 if __name__ == "__main__":
