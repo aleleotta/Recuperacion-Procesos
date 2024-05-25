@@ -15,7 +15,17 @@ def clasificarRutas(receiver: PipeConnection, sender: PipeConnection):
     listadoRutas = receiver.recv()
     listadoRutasABC = []
     for tuple in listadoRutas:
-        tuple[]
+        primerOcteto = tuple[0]
+        if primerOcteto <= 127: #Class A
+            tupleWithClass = (tuple[0], tuple[1], "Class A") #Se agrega un cadena con la clasificacion del ip.
+            listadoRutasABC.append(tupleWithClass)
+        elif primerOcteto >= 128 and primerOcteto <= 191: #Class B
+            tupleWithClass = (tuple[0], tuple[1], "Class B")
+            listadoRutasABC.append(tupleWithClass)
+        elif primerOcteto >= 192 and primerOcteto <= 223: #Class C
+            tupleWithClass = (tuple[0], tuple[1], "Class C")
+            listadoRutasABC.append(tupleWithClass)
+    sender.send(listadoRutasABC)
     
 
 if __name__ == "__main__":
