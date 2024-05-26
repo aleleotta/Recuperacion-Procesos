@@ -27,7 +27,7 @@ def clasificarRutas(receiver: PipeConnection, sender: PipeConnection):
             listadoRutasABC.append(tupleWithClass)
     sender.send(listadoRutasABC)
     
-def imprimirRutas(receiver: PipeConnection): #TODO
+def imprimirRutas(receiver: PipeConnection):
     listadoRutasABC = receiver.recv()
     print("---------------------------------------------------")
     for tuple in listadoRutasABC:
