@@ -37,5 +37,9 @@ def imprimirRutas(receiver: PipeConnection): #TODO
 if __name__ == "__main__":
     left, right = Pipe()
     left1, right1 = Pipe()
-    p: Process = Process(target = crearRutas, args = (left,))
+    p1: Process = Process(target = crearRutas, args = (left,))
+    p2: Process = Process(target = clasificarRutas, args = (right, left1))
+    p3: Process = Process(target = imprimirRutas, args = (right1,))
+    p1.start(); p2.start(); p3.start()
+    p3.join()
     print("El hilo Main ha acabado de ejecutarse.")
