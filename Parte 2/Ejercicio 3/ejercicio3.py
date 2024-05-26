@@ -45,6 +45,9 @@ def imprimirNotaMaxima(queue: Queue):
 if __name__ == "__main__":
     queue = Queue()
     nombres = ["Emma", "Liam", "Olivia", "Noah", "Ava", "William", "Sophia", "James", "Isabella", "Benjamin"]
+    with open("Parte 2/Ejercicio 3/medias.txt", "w") as doc:
+        doc.write("")
+        doc.flush()
     for i in range(10):
         filePath = f"Parte 2/Ejercicio 3/Notas/notas{i}.txt"
         p1: Process = Process(target = generarNumeros, args = (queue, filePath))
@@ -52,4 +55,4 @@ if __name__ == "__main__":
         p3: Process = Process(target = imprimirNotaMaxima, args = (queue,))
         p1.start(); p2.start(); p3.start()
     p3.join()
-    print("\n\nTodos los procesos han terminado.")
+    print("\nTodos los procesos han terminado.\n")
