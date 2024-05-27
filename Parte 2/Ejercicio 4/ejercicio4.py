@@ -30,5 +30,5 @@ if __name__ == "__main__":
         p2.start()
         p2.join()
     else:
-        print("Input incorrecto.")
+        print("\nInput incorrecto.")
     print("\nSe terminaron todos los procesos.\n")
