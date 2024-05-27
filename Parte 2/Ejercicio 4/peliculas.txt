@@ -1,0 +1,20 @@
+The Godfather;1972
+Star Wars;1977
+The Shawshank Redemption;1994
+Pulp Fiction;1994
+The Dark Knight;2008
+Forrest Gump;1994
+Inception;2010
+The Matrix;1999
+Gladiator;2000
+Schindler's List;1993
+Jurassic Park;1993
+The Lord of the Rings: The Fellowship of the Ring;2001
+Avatar;2009
+Back to the Future;1985
+Fight Club;1999
+Goodfellas;1990
+Braveheart;1995
+The Lion King;1994
+Saving Private Ryan;1998
+The Silence of the Lambs;1991
