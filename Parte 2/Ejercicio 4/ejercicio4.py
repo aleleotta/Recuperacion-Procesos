@@ -1,5 +1,6 @@
 from multiprocessing import Process, Pipe
 from multiprocessing.connection import PipeConnection
+from datetime import datetime
 
 def leerFicheroPeliculas(sender: PipeConnection, filePath: str, year: int):
     listadoPeliculasYear = []
@@ -22,3 +23,12 @@ if __name__ == "__main__":
     left, right = Pipe()
     filePath = "Parte 2/Ejercicio 4/peliculas.txt"
     year = int(input("Year: "))
+    if year <= datetime.today().year:
+        p1: Process = Process(target = leerFicheroPeliculas, args = (left, filePath, year))
+        p2: Process = Process(target = escribirPeliculas, args = (right,))
+        p1.start()
+        p2.start()
+        p2.join()
+    else:
+        print("Input incorrecto.")
+    print("\nSe terminaron todos los procesos.\n")
