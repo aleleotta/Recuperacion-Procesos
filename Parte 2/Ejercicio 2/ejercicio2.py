@@ -4,7 +4,7 @@ from random import randint
 
 def crearRutas(sender: PipeConnection):
     listadoRutas = []
-    for i in range(0, 11):
+    for i in range(10):
         primerOcteto = randint(0,255)
         ip: str = f"{primerOcteto}.{randint(0,255)}.{randint(0,255)}.{randint(0,255)}"
         tuple = (primerOcteto, ip)
